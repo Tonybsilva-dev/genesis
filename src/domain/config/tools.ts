@@ -121,7 +121,7 @@ export const versioningTools: Tool[] = [
 		id: "gitkraken",
 		name: "GitKraken",
 		description: "Cliente Git visual e intuitivo",
-		checkCommand: "test -d \"/Applications/GitKraken.app\" || test -d \"$LOCALAPPDATA/GitKraken\"",
+		checkCommand: "test -d \"/Applications/GitKraken.app\" || test -d \"$LOCALAPPDATA/GitKraken\" || snap list gitkraken 2>/dev/null | grep -q gitkraken",
 		categoryId: "versioning",
 		isGUI: true,
 		installCommands: {
@@ -187,7 +187,7 @@ export const editorTools: Tool[] = [
 		id: "sublime",
 		name: "Sublime Text",
 		description: "Editor de texto sofisticado para código",
-		checkCommand: "command -v subl || test -d \"/Applications/Sublime Text.app\"",
+		checkCommand: "command -v subl || test -d \"/Applications/Sublime Text.app\" || snap list sublime-text 2>/dev/null | grep -q sublime-text",
 		categoryId: "editors",
 		isGUI: true,
 		installCommands: {
@@ -212,7 +212,7 @@ export const editorTools: Tool[] = [
 		id: "webstorm",
 		name: "WebStorm",
 		description: "IDE JavaScript da JetBrains",
-		checkCommand: "test -d \"/Applications/WebStorm.app\" || command -v webstorm",
+		checkCommand: "test -d \"/Applications/WebStorm.app\" || command -v webstorm || snap list webstorm 2>/dev/null | grep -q webstorm",
 		categoryId: "editors",
 		isGUI: true,
 		installCommands: {
@@ -228,7 +228,7 @@ export const workTools: Tool[] = [
 		id: "slack",
 		name: "Slack",
 		description: "Plataforma de comunicação para equipes",
-		checkCommand: "command -v slack || where slack || test -d \"/Applications/Slack.app\" || test -d \"$LOCALAPPDATA/slack\"",
+		checkCommand: "command -v slack || where slack || test -d \"/Applications/Slack.app\" || test -d \"$LOCALAPPDATA/slack\" || snap list slack 2>/dev/null | grep -q slack",
 		categoryId: "work",
 		isGUI: true,
 		installCommands: {
@@ -241,7 +241,7 @@ export const workTools: Tool[] = [
 		id: "clickup",
 		name: "ClickUp",
 		description: "Ferramenta de gerenciamento de projetos e tarefas",
-		checkCommand: "command -v clickup || where clickup || test -d \"/Applications/ClickUp.app\" || test -d \"$LOCALAPPDATA/ClickUp\"",
+		checkCommand: "command -v clickup || where clickup || test -d \"/Applications/ClickUp.app\" || test -d \"$LOCALAPPDATA/ClickUp\" || snap list clickup 2>/dev/null | grep -q clickup",
 		categoryId: "work",
 		isGUI: true,
 		installCommands: {
@@ -254,7 +254,7 @@ export const workTools: Tool[] = [
 		id: "linear",
 		name: "Linear",
 		description: "Ferramenta moderna de gerenciamento de projetos",
-		checkCommand: "test -d \"/Applications/Linear.app\" || test -d \"$LOCALAPPDATA/Linear\"",
+		checkCommand: "test -d \"/Applications/Linear.app\" || test -d \"$LOCALAPPDATA/Linear\" || snap list linear 2>/dev/null | grep -q linear",
 		categoryId: "work",
 		isGUI: true,
 		installCommands: {
@@ -267,7 +267,7 @@ export const workTools: Tool[] = [
 		id: "todoist",
 		name: "Todoist",
 		description: "Gerenciador de tarefas pessoais e profissionais",
-		checkCommand: "test -d \"/Applications/Todoist.app\" || test -d \"$LOCALAPPDATA/Todoist\"",
+		checkCommand: "test -d \"/Applications/Todoist.app\" || test -d \"$LOCALAPPDATA/Todoist\" || snap list todoist 2>/dev/null | grep -q todoist",
 		categoryId: "work",
 		isGUI: true,
 		installCommands: {
@@ -295,7 +295,7 @@ export const androidTools: Tool[] = [
 		id: "android-studio",
 		name: "Android Studio",
 		description: "IDE oficial para desenvolvimento Android",
-		checkCommand: "command -v studio || where studio || test -d \"/Applications/Android Studio.app\" || test -d \"$LOCALAPPDATA/Android/Sdk\"",
+		checkCommand: "command -v studio || where studio || test -d \"/Applications/Android Studio.app\" || test -d \"$LOCALAPPDATA/Android/Sdk\" || snap list android-studio 2>/dev/null | grep -q android-studio",
 		categoryId: "android",
 		isGUI: true,
 		installCommands: {
@@ -320,7 +320,7 @@ export const androidTools: Tool[] = [
 		id: "flutter",
 		name: "Flutter SDK",
 		description: "Framework para apps multiplataforma (Android, iOS, Web)",
-		checkCommand: "command -v flutter || where flutter",
+		checkCommand: "command -v flutter || where flutter || snap list flutter 2>/dev/null | grep -q flutter",
 		categoryId: "android",
 		installCommands: {
 			macos: "brew install --cask flutter",
@@ -414,7 +414,7 @@ export const databaseTools: Tool[] = [
 		id: "dbeaver",
 		name: "DBeaver",
 		description: "Cliente universal de banco de dados",
-		checkCommand: "command -v dbeaver || where dbeaver || test -d \"/Applications/DBeaver.app\"",
+		checkCommand: "command -v dbeaver || where dbeaver || test -d \"/Applications/DBeaver.app\" || snap list dbeaver-ce 2>/dev/null | grep -q dbeaver-ce",
 		categoryId: "database",
 		isGUI: true,
 		installCommands: {
@@ -427,7 +427,7 @@ export const databaseTools: Tool[] = [
 		id: "tableplus",
 		name: "TablePlus",
 		description: "Cliente moderno para bancos de dados relacionais e NoSQL",
-		checkCommand: "test -d \"/Applications/TablePlus.app\"",
+		checkCommand: "test -d \"/Applications/TablePlus.app\" || snap list tableplus 2>/dev/null | grep -q tableplus",
 		categoryId: "database",
 		isGUI: true,
 		installCommands: {
@@ -440,7 +440,7 @@ export const databaseTools: Tool[] = [
 		id: "mongodb-compass",
 		name: "MongoDB Compass",
 		description: "Interface gráfica oficial do MongoDB",
-		checkCommand: "test -d \"/Applications/MongoDB Compass.app\" || test -d \"$LOCALAPPDATA/MongoDBCompass\"",
+		checkCommand: "test -d \"/Applications/MongoDB Compass.app\" || test -d \"$LOCALAPPDATA/MongoDBCompass\" || snap list mongodb-compass 2>/dev/null | grep -q mongodb-compass",
 		categoryId: "database",
 		isGUI: true,
 		installCommands: {
@@ -453,7 +453,7 @@ export const databaseTools: Tool[] = [
 		id: "redis-insight",
 		name: "Redis Insight",
 		description: "Interface gráfica oficial do Redis",
-		checkCommand: "test -d \"/Applications/Redis Insight.app\" || test -d \"$LOCALAPPDATA/RedisInsight\"",
+		checkCommand: "test -d \"/Applications/Redis Insight.app\" || test -d \"$LOCALAPPDATA/RedisInsight\" || snap list redisinsight 2>/dev/null | grep -q redisinsight",
 		categoryId: "database",
 		isGUI: true,
 		installCommands: {
@@ -693,7 +693,7 @@ export const apiTestingTools: Tool[] = [
 		id: "postman",
 		name: "Postman",
 		description: "Cliente de API para testes e desenvolvimento",
-		checkCommand: "command -v postman || where postman || test -d \"/Applications/Postman.app\"",
+		checkCommand: "command -v postman || where postman || test -d \"/Applications/Postman.app\" || snap list postman 2>/dev/null | grep -q postman",
 		categoryId: "api-testing",
 		isGUI: true,
 		installCommands: {
@@ -706,7 +706,7 @@ export const apiTestingTools: Tool[] = [
 		id: "insomnia",
 		name: "Insomnia",
 		description: "Cliente REST e GraphQL",
-		checkCommand: "command -v insomnia || test -d \"/Applications/Insomnia.app\"",
+		checkCommand: "command -v insomnia || test -d \"/Applications/Insomnia.app\" || snap list insomnia 2>/dev/null | grep -q insomnia",
 		categoryId: "api-testing",
 		isGUI: true,
 		installCommands: {
@@ -719,7 +719,7 @@ export const apiTestingTools: Tool[] = [
 		id: "bruno",
 		name: "Bruno",
 		description: "Cliente de API open-source (alternativa ao Postman)",
-		checkCommand: "command -v bruno || test -d \"/Applications/Bruno.app\"",
+		checkCommand: "command -v bruno || test -d \"/Applications/Bruno.app\" || snap list bruno 2>/dev/null | grep -q bruno",
 		categoryId: "api-testing",
 		isGUI: true,
 		installCommands: {
@@ -750,7 +750,7 @@ export const designTools: Tool[] = [
 		id: "figma",
 		name: "Figma",
 		description: "Design colaborativo e prototipagem",
-		checkCommand: "test -d \"/Applications/Figma.app\" || test -d \"$LOCALAPPDATA/Figma\"",
+		checkCommand: "test -d \"/Applications/Figma.app\" || test -d \"$LOCALAPPDATA/Figma\" || snap list figma-linux 2>/dev/null | grep -q figma-linux",
 		categoryId: "design",
 		isGUI: true,
 		installCommands: {
@@ -803,7 +803,7 @@ export const communicationTools: Tool[] = [
 		id: "discord",
 		name: "Discord",
 		description: "Comunicação para comunidades e equipes",
-		checkCommand: "test -d \"/Applications/Discord.app\" || test -d \"$LOCALAPPDATA/Discord\"",
+		checkCommand: "test -d \"/Applications/Discord.app\" || test -d \"$LOCALAPPDATA/Discord\" || snap list discord 2>/dev/null | grep -q discord",
 		categoryId: "communication",
 		isGUI: true,
 		installCommands: {
@@ -816,7 +816,7 @@ export const communicationTools: Tool[] = [
 		id: "zoom",
 		name: "Zoom",
 		description: "Videoconferência e reuniões",
-		checkCommand: "test -d \"/Applications/zoom.us.app\" || test -d \"$LOCALAPPDATA/Zoom\"",
+		checkCommand: "test -d \"/Applications/zoom.us.app\" || test -d \"$LOCALAPPDATA/Zoom\" || snap list zoom-client 2>/dev/null | grep -q zoom-client",
 		categoryId: "communication",
 		isGUI: true,
 		installCommands: {
@@ -829,7 +829,7 @@ export const communicationTools: Tool[] = [
 		id: "notion",
 		name: "Notion",
 		description: "Documentação e base de conhecimento",
-		checkCommand: "test -d \"/Applications/Notion.app\" || test -d \"$LOCALAPPDATA/Notion\"",
+		checkCommand: "test -d \"/Applications/Notion.app\" || test -d \"$LOCALAPPDATA/Notion\" || snap list notion-snap-reborn 2>/dev/null | grep -q notion-snap-reborn",
 		categoryId: "communication",
 		isGUI: true,
 		installCommands: {
@@ -842,7 +842,7 @@ export const communicationTools: Tool[] = [
 		id: "obsidian",
 		name: "Obsidian",
 		description: "Base de conhecimento pessoal em Markdown",
-		checkCommand: "test -d \"/Applications/Obsidian.app\" || test -d \"$LOCALAPPDATA/Obsidian\"",
+		checkCommand: "test -d \"/Applications/Obsidian.app\" || test -d \"$LOCALAPPDATA/Obsidian\" || snap list obsidian 2>/dev/null | grep -q obsidian",
 		categoryId: "communication",
 		isGUI: true,
 		installCommands: {
@@ -855,7 +855,7 @@ export const communicationTools: Tool[] = [
 		id: "teams",
 		name: "Microsoft Teams",
 		description: "Colaboração e comunicação empresarial",
-		checkCommand: "test -d \"/Applications/Microsoft Teams.app\" || test -d \"$LOCALAPPDATA/Microsoft/Teams\"",
+		checkCommand: "test -d \"/Applications/Microsoft Teams.app\" || test -d \"$LOCALAPPDATA/Microsoft/Teams\" || snap list teams 2>/dev/null | grep -q teams",
 		categoryId: "communication",
 		isGUI: true,
 		installCommands: {

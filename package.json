@@ -1,6 +1,6 @@
 {
   "name": "@tonybsilva/genesis",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "Ferramenta de automação de setup de ambiente de desenvolvimento cross-platform",
   "main": "dist/index.js",
