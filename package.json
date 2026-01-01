@@ -1,6 +1,6 @@
 {
   "name": "@tonybsilva/genesis",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "Ferramenta de automação de setup de ambiente de desenvolvimento cross-platform",
   "main": "dist/index.js",
@@ -36,17 +36,20 @@
     "devtools",
     "homebrew",
     "winget",
-    "apt"
+    "apt",
+    "snap",
+    "linux",
+    "ubuntu"
   ],
   "author": "Antonio B. Silva",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antoniobsilva/genesis.git"
+    "url": "git+https://github.com/Tonybsilva-dev/genesis.git"
   },
-  "homepage": "https://github.com/antoniobsilva/genesis#readme",
+  "homepage": "https://github.com/Tonybsilva-dev/genesis#readme",
   "bugs": {
-    "url": "https://github.com/antoniobsilva/genesis/issues"
+    "url": "https://github.com/Tonybsilva-dev/genesis/issues"
   },
   "engines": {
     "node": ">=18.0.0"
