@@ -4,7 +4,7 @@ import { getCurrentOS } from "../../domain/services/os-detector.js";
 import { HomebrewAdapter } from "../../infrastructure/package-managers/homebrew-adapter.js";
 import { HomebrewInstaller } from "../../infrastructure/package-managers/homebrew-installer.js";
 import { WinGetAdapter } from "../../infrastructure/package-managers/winget-adapter.js";
-import { APTAdapter } from "../../infrastructure/package-managers/apt-adapter.js";
+import { LinuxInstaller } from "../../infrastructure/package-managers/linux-installer.js";
 import { getEnvironmentManager } from "../../infrastructure/environment/index.js";
 import { shell } from "../../infrastructure/shell/index.js";
 import * as p from "@clack/prompts";
@@ -102,12 +102,14 @@ export class InstallationService {
 				throw new Error("WinGet não está disponível no sistema");
 			}
 			case "linux": {
-				const adapter = new APTAdapter();
-				if (await adapter.isAvailable()) {
-					this.packageManager = adapter;
-					return adapter;
+				// Usa o LinuxInstaller que detecta automaticamente
+				// o tipo de instalação (APT, Snap, curl, etc.)
+				const installer = new LinuxInstaller();
+				if (await installer.isAvailable()) {
+					this.packageManager = installer;
+					return installer;
 				}
-				throw new Error("APT não está disponível no sistema");
+				throw new Error("Sistema Linux não detectado");
 			}
 			default:
 				throw new Error(`Sistema operacional não suportado: ${os}`);
