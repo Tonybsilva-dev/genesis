@@ -1,0 +1,65 @@
+{
+  "name": "@tonybsilva/genesis",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Ferramenta de automação de setup de ambiente de desenvolvimento cross-platform",
+  "main": "dist/index.js",
+  "bin": {
+    "genesis": "./bin/genesis.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "build": "bun build ./src/index.ts --compile --outfile genesis",
+    "build:npm": "bun build ./src/index.ts --outdir dist --target node",
+    "prepublishOnly": "npm run build:npm",
+    "build:macos-arm64": "bun build ./src/index.ts --compile --target=bun-darwin-arm64 --outfile dist/genesis-macos-arm64",
+    "build:macos-x64": "bun build ./src/index.ts --compile --target=bun-darwin-x64 --outfile dist/genesis-macos-x64",
+    "build:linux-x64": "bun build ./src/index.ts --compile --target=bun-linux-x64 --outfile dist/genesis-linux-x64",
+    "build:linux-arm64": "bun build ./src/index.ts --compile --target=bun-linux-arm64 --outfile dist/genesis-linux-arm64",
+    "build:windows-x64": "bun build ./src/index.ts --compile --target=bun-windows-x64 --outfile dist/genesis-windows-x64.exe",
+    "build:all": "bun run build:macos-arm64 && bun run build:macos-x64 && bun run build:linux-x64 && bun run build:linux-arm64 && bun run build:windows-x64",
+    "release": "bun run scripts/release.ts",
+    "test": "bun test"
+  },
+  "keywords": [
+    "setup",
+    "automation",
+    "development",
+    "environment",
+    "cross-platform",
+    "cli",
+    "devtools",
+    "homebrew",
+    "winget",
+    "apt"
+  ],
+  "author": "Antonio B. Silva",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniobsilva/genesis.git"
+  },
+  "homepage": "https://github.com/antoniobsilva/genesis#readme",
+  "bugs": {
+    "url": "https://github.com/antoniobsilva/genesis/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "zx": "^8.0.0",
+    "@clack/prompts": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "bun-types": "latest"
+  }
+}
