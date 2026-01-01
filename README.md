@@ -356,11 +356,20 @@ Este projeto está sob a licença **MIT**.
 
 ## 👨‍💻 Desenvolvedor
 
-**Antonio B. Silva**  
-Full Stack Developer
-
-- 💼 LinkedIn: [linkedin.com/in/tonybsilva](https://linkedin.com/in/tonybsilva)
-- 📧 Email: contato@tonybsilva.com
+<table>
+  <tr>
+    <td width="150">
+      <img src="https://github.com/tonybsilva.png" width="150" height="150" style="border-radius: 50%;" alt="Antonio B. Silva">
+    </td>
+    <td>
+      <strong>Antonio B. Silva</strong><br>
+      Software Engineer<br><br>
+      💼 <a href="https://www.linkedin.com/in/tony-silva/">LinkedIn</a><br>
+      📧 <a href="mailto:contato@antoniobsilva.com.br">contato@antoniobsilva.com.br</a><br>
+      🐙 <a href="https://github.com/tonybsilva">GitHub</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
